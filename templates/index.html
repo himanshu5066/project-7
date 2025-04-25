@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Disaster Tweet Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        form { margin-top: 20px; }
+        textarea { width: 100%; height: 100px; }
+        .result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Disaster Tweet Classifier</h1>
+    <form method="post">
+        <label for="tweet">Enter Tweet:</label><br>
+        <textarea name="tweet" required>{{ tweet if tweet else '' }}</textarea><br><br>
+        <input type="submit" value="Classify">
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        Prediction: {{ prediction }}
+    </div>
+    {% endif %}
+</body>
+</html>
